@@ -15,7 +15,6 @@ class GamesTest < ActionDispatch::IntegrationTest
   end
 
   test "new easy game returns the correct body" do
-    skip
     post '/games', params: { difficulty: 0 }
 
     json = JSON.parse(response.body)

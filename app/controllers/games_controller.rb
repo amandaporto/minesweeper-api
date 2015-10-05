@@ -1,11 +1,33 @@
 class GamesController < ApplicationController
 
   def create
-    # Why do we only need difficulty to set the response??
-    @game = Game.create(difficulty: params[:difficulty])
+    game = Game.create(difficulty: params[:difficulty], state: "new")
 
-    render json: @game, status: 201
+    render json: game, status: 201
   end
+#
+# id = game id (id column in database)
+# board = make_board?
+# state = playing/new/won/lost
+# mines = difficulty
+#
+
+#
+# @definition = Definition.new(definition_params)
+#
+# respond_to do |format|
+#   if @definition.save
+#     format.html { redirect_to @definition, notice: 'Definition was successfully created.' }
+#     format.json { render :show, status: :created, location: @definition }
+#   else
+#     format.html { render :new }
+#     format.json { render json: @definition.errors, status: :unprocessable_entity }
+#   end
+
+
+
+
+
 
   # def show
   #
