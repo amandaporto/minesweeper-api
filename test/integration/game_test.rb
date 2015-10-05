@@ -79,7 +79,6 @@ class GamesTest < ActionDispatch::IntegrationTest
   end
 
   test "getting a board in play" do
-    skip
     post '/games', params: {difficulty: 0}
     json = JSON.parse(response.body)
     board_id = json["id"]
