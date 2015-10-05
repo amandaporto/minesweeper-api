@@ -29,7 +29,6 @@ class GamesTest < ActionDispatch::IntegrationTest
   end
 
   test "new intermediate game returns the correct body" do
-    skip
     post '/games', params: { difficulty: 1 }
 
     json = JSON.parse(response.body)
@@ -44,7 +43,6 @@ class GamesTest < ActionDispatch::IntegrationTest
   end
 
   test "new expert game returns the correct body" do
-    skip
     post '/games', params: { difficulty: 2 }
 
     json = JSON.parse(response.body)
