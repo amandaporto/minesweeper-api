@@ -11,15 +11,12 @@ class Game < ActiveRecord::Base
     self.board = size.times.map { |row| size.times.map { |col| EMPTY } }
   end
 
-  # Place the right number of mines on the board
-  # but you CAN'T place any at row and col
   def place_mines(row, col)
     self.state = "playing"
 
-    #
-    # YOUR CODE GOES HERE TO PLACE THE RIGHT NUMBER OF BOMBS
-    #
-    # self.mine_locations = ...
+    size_array = (0...size).to_a
+    number_of_mines = [10,40,99][difficulty]
+    self.mine_locations = number_of_mines.times.map {[size_array.sample],[size_array.sample]}
   end
 
   def flag(row, col)

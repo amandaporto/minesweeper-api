@@ -147,7 +147,6 @@ class GamesTest < ActionDispatch::IntegrationTest
   end
 
   test "losing" do
-  
     all_spaces = []
     8.times{ |row| 8.times { |col| all_spaces << [row,col] } }
 
@@ -171,4 +170,5 @@ class GamesTest < ActionDispatch::IntegrationTest
       end
     end
   end
+
 end
